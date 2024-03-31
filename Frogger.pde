@@ -4,17 +4,20 @@ Log[] logs;
 
 float grid = 50; 
 
-void resetGame() {
+void resetGame() { //starts the frog back @ the beginning
   frog = new Frog(width/2-grid/2, height-grid, grid);
-  frog.attach(null);
+  frog.attach(null); 
 }
 
 void setup(){
   size(500, 500);
   cars = new Car[8];
-  //frog = new Frog(width/2-grid/2, height-grid, grid);
   resetGame();
-  
+
+
+  //below this comment is the organization of logs, cars
+
+
   int index = 0;
   //ROW 1
   for (int i = 0; i < 2; i++) {
@@ -60,6 +63,9 @@ void setup(){
   }
 }
 
+//below here is the places where the frog rests
+
+
 void draw(){
   background(0);
   fill(75);
@@ -100,7 +106,7 @@ void draw(){
     frog.show();
 }
 
-void keyPressed(){
+void keyPressed(){ //frog movement
   if (keyCode == UP){
     frog.move(0,-1);
   } else if (keyCode == DOWN){
