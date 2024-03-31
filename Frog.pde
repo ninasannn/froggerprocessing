@@ -7,7 +7,7 @@ class Frog extends Rectangle{
   }
   
   void attach(Log log) {
-    attached = log;
+    attached = log; //attaches frog to the log
   }
   
   void update() {
@@ -20,12 +20,12 @@ class Frog extends Rectangle{
   }
   
   void show(){
-    fill(95, 142, 72);
+    fill(95, 142, 72); //gives frog its color
     rect(x, y, w, w);
   }
   
-  void move(float xdir, float ydir){
+  void move(float xdir, float ydir){ //allows frog to move
     x += xdir * grid;
-    y += ydir * grid;
+    y += ydir * grid; 
   }
 }
