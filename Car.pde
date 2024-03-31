@@ -22,7 +22,7 @@ class Car extends Rectangle {
     float g = random(255);
     float b = random(255);
     
-    fill(r, g, b); // cars random colors
+    fill(r, g, b); // cars color
     rect(x, y, w, h);
   }
 
