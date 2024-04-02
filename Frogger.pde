@@ -1,4 +1,5 @@
 Frog frog;
+PImage truck;
 Car[] cars;
 Log[] logs;
 
@@ -11,6 +12,7 @@ void resetGame() { //starts the frog back @ the beginning
 
 void setup(){
   size(500, 500);
+  truck = loadImage("truck.png");
   cars = new Car[8];
   resetGame();
 
