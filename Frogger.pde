@@ -11,6 +11,8 @@ float grid = 50;
 
 
 void resetGame() {
+  frogSprite = loadImage("frog.png");
+  
   frog = new Frog(width/2-grid/2, height-grid, grid, frogSprite);
   frog.attach(null);
 }
