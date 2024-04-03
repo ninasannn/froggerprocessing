@@ -1,39 +1,53 @@
 Frog frog;
 Car[] cars;
 Log[] logs;
+PImage carSprite;
+PImage truckSprite;
+PImage logSprite;
+PImage frogSprite;
 
 float grid = 50; 
 
+
+
 void resetGame() {
-  frog = new Frog(width/2-grid/2, height-grid, grid);
+  frogSprite = loadImage("frog.png");
+  
+  frog = new Frog(width/2-grid/2, height-grid, grid, frogSprite);
   frog.attach(null);
 }
 
-void setup(){
+void setup() {
   size(500, 500);
   cars = new Car[8];
-  //frog = new Frog(width/2-grid/2, height-grid, grid);
+  
+  //sprites
+  carSprite = loadImage("car.png");
+  truckSprite = loadImage("truck.png");
+  logSprite = loadImage("log.png");
+  frogSprite = loadImage("frog.png");
+  
   resetGame();
   
   int index = 0;
   //ROW 1
   for (int i = 0; i < 2; i++) {
     float x = i * 300;
-    cars[index] = new Car(x, height-grid*2, grid*2, grid, 2);
+    cars[index] = new Car(x, height-grid*2, grid*2, grid, 2, truckSprite);
     index++;
   }
   
   //ROW 2
   for (int i = 0; i < 2; i++) {
     float x = i * 200 + 150;
-    cars[index] = new Car(x, height-grid*3, grid, grid, 3);
+    cars[index] = new Car(x, height-grid*3, grid, grid, 3, carSprite);
     index++;
   }
   
   //ROW 3
   for (int i = 0; i < 4; i++) {
     float x = i * 150 + 25;
-    cars[index] = new Car(x, height-grid*4, grid, grid, 1);
+    cars[index] = new Car(x, height-grid*4, grid, grid, 1, carSprite);
     index++;
   }
   
@@ -43,19 +57,19 @@ void setup(){
   index = 0;
   for (int i = 0; i < 2; i++) {
     float x = i * 250 + 100;
-    logs[index] = new Log(x, height-grid*6, grid*3, grid, 2.3);
+    logs[index] = new Log(x, height-grid*6, grid*3, grid, 2.3, logSprite);
     index++;
   }
   //ROW 6
   for (int i = 0; i < 3; i++) {
     float x = i * 200 + 30;
-    logs[index] = new Log(x, height-grid*7, grid*2, grid, -1.3);
+    logs[index] = new Log(x, height-grid*7, grid*2, grid, -1.3, logSprite);
     index++;
   }
   //ROW 7
   for (int i = 0; i < 4; i++) {
     float x = i * 400 + 50;
-    logs[index] = new Log(x, height-grid*8, grid*4, grid, 0.5);
+    logs[index] = new Log(x, height-grid*8, grid*4, grid, 0.5, logSprite);
     index++;
   }
 }
