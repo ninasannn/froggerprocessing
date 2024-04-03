@@ -1,9 +1,11 @@
 class Car extends Rectangle {
   float speed;
+  PImage sprite;
   
-  Car(float x, float y, float w, float h, float s){
+  Car(float x, float y, float w, float h, float s, PImage sprite){
     super(x, y, w, h);
     speed = s;
+    this.sprite = sprite;
   }
   
   void update() {
@@ -17,8 +19,10 @@ class Car extends Rectangle {
   }
   
   void show() {
-    fill(167, 30, 35); // cars colors
-    rect(x, y, w, h);
+    //fill(167, 30, 35); // cars colors
+    //rect(x, y, w, h);
+    
+    image(sprite, x, y, w, h);
   }
 
 }
