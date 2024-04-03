@@ -1,4 +1,6 @@
-Frog frog;
+//WILL PROBABLY KEEP REFINING THIS GAME :D WE'LL SEE!!! 
+ 
+ Frog frog;
 Car[] cars;
 Log[] logs;
 PImage carSprite;
@@ -57,7 +59,7 @@ void setup() {
   index = 0;
   for (int i = 0; i < 2; i++) {
     float x = i * 250 + 100;
-    logs[index] = new Log(x, height-grid*6, grid*3, grid, 2.3, logSprite);
+    logs[index] = new Log(x, height-grid*6, grid*2, grid, 2.3, logSprite);
     index++;
   }
   //ROW 6
@@ -69,7 +71,7 @@ void setup() {
   //ROW 7
   for (int i = 0; i < 4; i++) {
     float x = i * 400 + 50;
-    logs[index] = new Log(x, height-grid*8, grid*4, grid, 0.5, logSprite);
+    logs[index] = new Log(x, height-grid*8, grid*2, grid, 0.5, logSprite);
     index++;
   }
 }
