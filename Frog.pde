@@ -1,31 +1,32 @@
-class Frog extends Rectangle{
-  
+class Frog extends Rectangle {
+  PImage sprite;
   Log attached = null;
   
-  Frog(float x, float y, float w){
+  Frog(float x, float y, float w, PImage sprite) {
     super(x, y, w, w);
+    this.sprite = sprite;
   }
   
   void attach(Log log) {
-    attached = log;
+    attached = log; // Attaches frog to the log
   }
   
   void update() {
     if (attached != null) {
-      frog.x += attached.speed;
+      x += attached.speed; // Update frog's position based on attached log's speed
     }
     
-    
-   frog.x = constrain(x, 0, width-w);
+    // Constrain frog's position within the screen boundaries
+    x = constrain(x, 0, width - w);
   }
   
-  void show(){
-    fill(95, 142, 72);
-    rect(x, y, w, w);
+  void show() {
+    // Draw the frog using inherited properties
+    image(sprite, x, y, w, h);
   }
   
-  void move(float xdir, float ydir){
+  void move(float xdir, float ydir) {
     x += xdir * grid;
-    y += ydir * grid;
+    y += ydir * grid; 
   }
 }
