@@ -1,4 +1,4 @@
-class Rectangle {
+class Rectangle { //this defines a rectangle
   float x;
   float y; 
   float w; 
@@ -30,6 +30,4 @@ class Rectangle {
       bottom <= otop);
 
   }
-  
-  
 }
